@@ -1,12 +1,10 @@
-from math import factorial
-got = False
-i = factorial(10)
-while not got:
-    i += 20
-    if i%11 == 0 and i%12 == 0 and \
-       i%13 == 0 and i%14 == 0 and \
-       i%15 == 0 and i%16 == 0 and \
-       i%17 == 0 and i%18 == 0 and \
-       i%19 == 0 and i%20 == 0:
-        print i
-        got = True
+from fractions import gcd
+from functools import reduce
+
+def lcm(a,b):
+    """
+    Calculate the lowest common multiple of two integers a and b
+    """
+    return a*b//gcd(a,b)
+
+print reduce(lcm, range(11,21))
