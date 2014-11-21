@@ -1,5 +1,6 @@
+from math import factorial
 got = False
-i = 0
+i = factorial(10)
 while not got:
     i += 20
     if i%11 == 0 and i%12 == 0 and \
